@@ -1,13 +1,13 @@
 {
-  "name": "multi-provider-setup",
+  "name": "freebuffet",
   "version": "0.1.0",
-  "description": "Multi-provider setup for AI coding agents (OpenCode, Codex, Claude Code, Antigravity CLI)",
+  "description": "All-you-can-eat LLM providers — set up 165+ providers for OpenCode, Codex, Claude Code & Antigravity CLI",
   "type": "module",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "mps": "dist/index.js",
-    "multi-provider": "dist/index.js"
+    "fb": "dist/index.js",
+    "freebuffet": "dist/index.js"
   },
   "exports": {
     ".": {
@@ -22,27 +22,23 @@
       "types": "./dist/health.d.ts",
       "default": "./dist/health.js"
     },
+    "./config": {
+      "types": "./dist/config.d.ts",
+      "default": "./dist/config.js"
+    },
     "./configs": {
       "types": "./dist/configs/index.d.ts",
       "default": "./dist/configs/index.js"
     }
   },
-  "scripts": {
-    "build": "bun build ./src/index.ts --outdir ./dist --target node",
-    "dev": "bun run ./src/index.ts",
-    "typecheck": "tsc --noEmit",
-    "prepublish": "bun run build"
-  },
-  "files": [
-    "dist"
-  ],
   "keywords": [
+    "freebuffet",
+    "llm",
+    "provider",
     "opencode",
     "codex",
     "claude-code",
     "antigravity",
-    "llm",
-    "provider",
     "ai-coding-agent"
   ],
   "license": "MIT",

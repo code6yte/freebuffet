@@ -1,38 +1,44 @@
-# multi-provider-setup
+# FreeBuffet 🍱
 
-CLI tool to add API keys, health-check 112+ LLM providers, and auto-generate configs for OpenCode, Codex CLI, Claude Code, and Antigravity CLI.
+All-you-can-eat LLM providers — manage API keys, health-check 165+ providers, and auto-generate configs for OpenCode, Codex CLI, Claude Code, and Antigravity CLI.
 
 ## Architecture
 
 | File | Purpose |
 |------|---------|
-| `src/providers.ts` | 112 providers with `id`, `name`, `baseURL`, `envKey` (optional), `website`, `apiType`, `freeTier`, `noCc`, `permanentFree` |
+| `src/providers.ts` | 165 providers with `id`, `name`, `baseURL`, `envKey`, `website`, `apiType`, `freeTier`, `noCc`, `permanentFree`, `recommended`, `tags` |
 | `src/health.ts` | Pings `/v1/models` (OpenAI) or `/v1/messages` (Anthropic); returns `{status, latencyMs, models[], error?}` |
+| `src/config.ts` | AES-256-GCM encrypted local key store at `~/.config/freebuffet/config.enc` |
 | `src/configs/opencode.ts` | Generates `opencode.json` with `@ai-sdk/openai-compatible` / `@ai-sdk/anthropic` |
 | `src/configs/codex.ts` | Generates `~/.codex/config.toml` (model_providers tables) |
 | `src/configs/claude.ts` | Generates `~/.claude/settings.json` + env vars |
 | `src/configs/antigravity.ts` | Generates `~/.config/antigravity/config.toml` entries |
-| `src/index.ts` | Interactive 5-step CLI: select providers → enter keys → health check → pick agents → write configs |
+| `src/index.ts` | Interactive CLI: filter → search providers → enter key → instant health check → model selection → agent configs |
 
 ## Key Decisions
 - UI: `@clack/prompts` + `picocolors`
-- Package name: `multi-provider-setup`, bins: `mps` / `multi-provider`
-- Providers deduplicated by `id` (keep entry with most fields)
+- Package name: `freebuffet`, bins: `fb` / `freebuffet`
+- 25 curated "free-coding favorites" with capability tags (coding, reasoning, vision, free, fast, no-cc)
+- Encrypted key store bound to machine (scrypt + AES-256-GCM)
 - `envKey` is optional — local/free providers (Ollama, LM Studio, vLLM, etc.) don't need one
 - ModelScope returns models publicly at `https://api-inference.modelscope.cn/v1/models` (no auth needed)
 
 ## Build & Verify
 ```sh
 bunx tsc --noEmit       # type check
-bun build ./src/index.ts --outdir ./dist --target node  # bundle
+bun run build           # bundle to dist/
+bun run dev             # run interactively
 ```
 
 ## Current Status
-- Full 112-provider registry ✓
+- Full 165-provider registry ✓
+- 25 curated free-coding favorites ✓
 - Health check (latency + model discovery) ✓
 - Config gen for all 4 agents ✓
+- Encrypted API key persistence ✓
+- Per-provider model selection ✓
 - TypeScript compiles clean ✓
-- Build produces 100KB `dist/index.js` in ~9ms ✓
+- Build produces ~130KB `dist/index.js` in ~7ms ✓
 - Not yet published to npm
 
 ## Future Ideas
