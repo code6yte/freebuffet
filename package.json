@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "All-you-can-eat LLM providers — set up 165+ providers for OpenCode, Codex, Claude Code & Antigravity CLI",
   "type": "module",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
     "fb": "dist/index.js",
@@ -31,6 +31,20 @@
       "default": "./dist/configs/index.js"
     }
   },
+  "scripts": {
+    "build": "bun run build:lib && bun run build:bundle",
+    "build:bundle": "bun build ./src/index.ts --outdir ./dist --target node",
+    "build:lib": "tsc --outDir dist",
+    "dev": "bun run ./src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "bun run build",
+    "prepack": "bun run build"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "keywords": [
     "freebuffet",
     "llm",
@@ -42,6 +56,22 @@
     "ai-coding-agent"
   ],
   "license": "MIT",
+  "author": {
+    "name": "code6yte",
+    "url": "https://github.com/code6yte"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code6yte/freebuffet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/code6yte/freebuffet/issues"
+  },
+  "homepage": "https://github.com/code6yte/freebuffet#readme",
+  "engines": {
+    "node": ">=18",
+    "bun": ">=1.0"
+  },
   "dependencies": {
     "@clack/prompts": "^0.10.1",
     "picocolors": "^1.1.1"
