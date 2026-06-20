@@ -1,0 +1,57 @@
+{
+  "name": "multi-provider-setup",
+  "version": "0.1.0",
+  "description": "Multi-provider setup for AI coding agents (OpenCode, Codex, Claude Code, Antigravity CLI)",
+  "type": "module",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "mps": "dist/index.js",
+    "multi-provider": "dist/index.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./providers": {
+      "types": "./dist/providers.d.ts",
+      "default": "./dist/providers.js"
+    },
+    "./health": {
+      "types": "./dist/health.d.ts",
+      "default": "./dist/health.js"
+    },
+    "./configs": {
+      "types": "./dist/configs/index.d.ts",
+      "default": "./dist/configs/index.js"
+    }
+  },
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target node",
+    "dev": "bun run ./src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "prepublish": "bun run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "opencode",
+    "codex",
+    "claude-code",
+    "antigravity",
+    "llm",
+    "provider",
+    "ai-coding-agent"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@clack/prompts": "^0.10.1",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.7.0"
+  }
+}

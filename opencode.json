@@ -1,0 +1,182 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "modelscope": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "ModelScope",
+      "options": {
+        "baseURL": "https://api-inference.modelscope.cn/v1"
+      },
+      "models": {
+        "deepseek-ai/DeepSeek-V3.2": {
+          "name": "DeepSeek-V3.2"
+        },
+        "deepseek-ai/DeepSeek-V4-Flash": {
+          "name": "DeepSeek-V4-Flash"
+        },
+        "iic/GUI-Owl-1.5-8B-Instruct": {
+          "name": "GUI-Owl-1.5-8B-Instruct"
+        },
+        "iic/GUI-Owl-1.5-8B-Think": {
+          "name": "GUI-Owl-1.5-8B-Think"
+        },
+        "LLM-Research/c4ai-command-r-plus-08-2024": {
+          "name": "c4ai-command-r-plus-08-2024"
+        },
+        "LLM-Research/Llama-4-Maverick-17B-128E-Instruct": {
+          "name": "Llama-4-Maverick-17B-128E-Instruct"
+        },
+        "MedAIBase/AntAngelMed": {
+          "name": "AntAngelMed"
+        },
+        "meituan-longcat/LongCat-Flash-Lite": {
+          "name": "LongCat-Flash-Lite"
+        },
+        "MiniMax/MiniMax-M1-80k": {
+          "name": "MiniMax-M1-80k"
+        },
+        "MiniMax/MiniMax-M2.5": {
+          "name": "MiniMax-M2.5"
+        },
+        "MiniMax/MiniMax-M2.7": {
+          "name": "MiniMax-M2.7"
+        },
+        "MiniMax/MiniMax-M3": {
+          "name": "MiniMax-M3"
+        },
+        "mistralai/Ministral-8B-Instruct-2410": {
+          "name": "Ministral-8B-Instruct-2410"
+        },
+        "mistralai/Mistral-Large-Instruct-2407": {
+          "name": "Mistral-Large-Instruct-2407"
+        },
+        "mistralai/Mistral-Small-Instruct-2409": {
+          "name": "Mistral-Small-Instruct-2409"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "Kimi-K2.5"
+        },
+        "MusePublic/Qwen-Image-Edit": {
+          "name": "Qwen-Image-Edit"
+        },
+        "nex-agi/Nex-N2-Pro": {
+          "name": "Nex-N2-Pro"
+        },
+        "opencompass/CompassJudger-1-32B-Instruct": {
+          "name": "CompassJudger-1-32B-Instruct"
+        },
+        "OpenGVLab/InternVL3_5-241B-A28B": {
+          "name": "InternVL3_5-241B-A28B"
+        },
+        "PaddlePaddle/ERNIE-4.5-0.3B-PT": {
+          "name": "ERNIE-4.5-0.3B-PT"
+        },
+        "PaddlePaddle/ERNIE-4.5-21B-A3B-PT": {
+          "name": "ERNIE-4.5-21B-A3B-PT"
+        },
+        "PaddlePaddle/ERNIE-4.5-300B-A47B-PT": {
+          "name": "ERNIE-4.5-300B-A47B-PT"
+        },
+        "PaddlePaddle/ERNIE-4.5-VL-28B-A3B-PT": {
+          "name": "ERNIE-4.5-VL-28B-A3B-PT"
+        },
+        "Qwen/Qwen-Image-Edit": {
+          "name": "Qwen-Image-Edit"
+        },
+        "Qwen/Qwen3-14B": {
+          "name": "Qwen3-14B"
+        },
+        "Qwen/Qwen3-235B-A22B": {
+          "name": "Qwen3-235B-A22B"
+        },
+        "Qwen/Qwen3-235B-A22B-Instruct-2507": {
+          "name": "Qwen3-235B-A22B-Instruct-2507"
+        },
+        "Qwen/Qwen3-235B-A22B-Thinking-2507": {
+          "name": "Qwen3-235B-A22B-Thinking-2507"
+        },
+        "Qwen/Qwen3-30B-A3B": {
+          "name": "Qwen3-30B-A3B"
+        },
+        "Qwen/Qwen3-30B-A3B-Thinking-2507": {
+          "name": "Qwen3-30B-A3B-Thinking-2507"
+        },
+        "Qwen/Qwen3-32B": {
+          "name": "Qwen3-32B"
+        },
+        "Qwen/Qwen3-4B": {
+          "name": "Qwen3-4B"
+        },
+        "Qwen/Qwen3-8B": {
+          "name": "Qwen3-8B"
+        },
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct": {
+          "name": "Qwen3-Coder-30B-A3B-Instruct"
+        },
+        "Qwen/Qwen3-Next-80B-A3B-Instruct": {
+          "name": "Qwen3-Next-80B-A3B-Instruct"
+        },
+        "Qwen/Qwen3-Next-80B-A3B-Thinking": {
+          "name": "Qwen3-Next-80B-A3B-Thinking"
+        },
+        "Qwen/Qwen3-VL-235B-A22B-Instruct": {
+          "name": "Qwen3-VL-235B-A22B-Instruct"
+        },
+        "Qwen/Qwen3-VL-8B-Instruct": {
+          "name": "Qwen3-VL-8B-Instruct"
+        },
+        "Qwen/Qwen3-VL-8B-Thinking": {
+          "name": "Qwen3-VL-8B-Thinking"
+        },
+        "Qwen/Qwen3.5-122B-A10B": {
+          "name": "Qwen3.5-122B-A10B"
+        },
+        "Qwen/Qwen3.5-27B": {
+          "name": "Qwen3.5-27B"
+        },
+        "Qwen/Qwen3.5-35B-A3B": {
+          "name": "Qwen3.5-35B-A3B"
+        },
+        "Qwen/Qwen3.5-397B-A17B": {
+          "name": "Qwen3.5-397B-A17B"
+        },
+        "Shanghai_AI_Laboratory/Intern-S1": {
+          "name": "Intern-S1"
+        },
+        "Shanghai_AI_Laboratory/Intern-S1-mini": {
+          "name": "Intern-S1-mini"
+        },
+        "Shanghai_AI_Laboratory/Intern-S2-Preview": {
+          "name": "Intern-S2-Preview"
+        },
+        "stepfun-ai/Step-3.5-Flash": {
+          "name": "Step-3.5-Flash"
+        },
+        "stepfun-ai/Step-3.7-Flash": {
+          "name": "Step-3.7-Flash"
+        },
+        "XGenerationLab/XiYanSQL-QwenCoder-32B-2412": {
+          "name": "XiYanSQL-QwenCoder-32B-2412"
+        },
+        "XGenerationLab/XiYanSQL-QwenCoder-32B-2504": {
+          "name": "XiYanSQL-QwenCoder-32B-2504"
+        },
+        "XiaomiMiMo/MiMo-V2-Flash": {
+          "name": "MiMo-V2-Flash"
+        },
+        "ZhipuAI/GLM-4.7-Flash": {
+          "name": "GLM-4.7-Flash"
+        },
+        "ZhipuAI/GLM-5": {
+          "name": "GLM-5"
+        },
+        "ZhipuAI/GLM-5.1": {
+          "name": "GLM-5.1"
+        },
+        "ZhipuAI/GLM-5.2": {
+          "name": "GLM-5.2"
+        }
+      }
+    }
+  }
+}
